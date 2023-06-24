@@ -35,15 +35,16 @@
 <form action="/" method="post">
                <div class="mb-3 mt-3">
                  <label for="email" class="form-label">عنوان الصفحة:</label>
-                 <input class="form-control" name="name" required />
+                 <input value="<?php if (!empty($_POST['name'])) { echo $_POST['name'];} ?>" class="form-control" name="name" required />
                </div>
                <div class="mb-3">
                  <label for="pwd" class="form-label">كود استعلام إس كيو إل:</label>
-                 <textarea class="form-control" name="code" required></textarea>
+                 <textarea class="form-control" name="code" required><?php if (!empty($_POST['code'])) { echo $_POST['code'];} ?></textarea>
                </div>
                
                <button type="submit" class="btn btn-primary">نشر</button>
              </form>
+             
              <?php
 
 // Require the library and set up the classes we're going to use in this first part.
